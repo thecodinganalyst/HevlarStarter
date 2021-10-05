@@ -2,7 +2,7 @@ name: Semantic Release
 
 on:
   push:
-    branches: [ "feature/semantic-release" ]
+    branches: [ "master" ]
 
 jobs:
   release:
