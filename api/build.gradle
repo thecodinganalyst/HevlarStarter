@@ -22,8 +22,32 @@ dependencies {
 
     testImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
     testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310'
+
+    testImplementation 'io.cucumber:cucumber-java:6.10.4'
+    testImplementation 'io.cucumber:cucumber-junit:6.10.4'
+    implementation group: 'io.cucumber', name: 'cucumber-spring', version: '6.10.4'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.7.2'
 }
 
 test {
     useJUnitPlatform()
 }
+
+// Cucumber Settings
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'com.hevlar.greeting.api.cucumber', 'src/test/resources']
+        }
+    }
+}
+// Cucumber Settings
