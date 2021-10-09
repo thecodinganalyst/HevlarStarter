@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.1.0](https://github.com/thecodinganalyst/HevlarStarter/compare/v1.0.0...v1.1.0) (2021-10-09)
+
+
+### Features
+
+* **cucumber:** add cucumber test to api ([1512964](https://github.com/thecodinganalyst/HevlarStarter/commit/15129646809d1d8b579b7c4a79a6a0ec5150746b))
+
 # 1.0.0 (2021-10-06)
 
 
