@@ -15,10 +15,7 @@
     [
       "@semantic-release/git",
       {
-        "assets": [
-          "CHANGELOG.md",
-          "pom.xml"
-        ]
+        "assets": ["CHANGELOG.md"]
       }
     ],
     [
