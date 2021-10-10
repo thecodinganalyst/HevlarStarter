@@ -1,2 +1,2 @@
 rootProject.name = 'HevlarStarter'
-include('domain', 'api')
+include('domain', 'api', 'ui')
